@@ -16,6 +16,7 @@
   --accent-yellow: #ffc107;
   --border-radius: 4px;
   --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --font-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   --font-main: Tahoma, Verdana, sans-serif;
 }
 
@@ -37,8 +38,15 @@ body {
   padding: 1rem 2rem;
   box-shadow: var(--box-shadow);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.container-logo-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .navbar-logo a {
@@ -50,6 +58,7 @@ body {
 
 .navbar-logo span {
   color: var(--light-gray);
+  text-shadow: var(--font-shadow);
 }
 
 .navbar-search {
@@ -72,4 +81,22 @@ body {
     padding: 0 1rem;
     cursor: pointer;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.navbar-links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-links li{
+    margin-left: 1.5rem;
+}
+
+.navbar-links a{
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
 }
