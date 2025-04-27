@@ -7,24 +7,44 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="container-logo-links">
-        <div class="navbar-logo">
-          <a href="#"><span>SPA CRUD</span> Courses App</a>
+    <header>
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="container-logo-links">
+          <div class="navbar-logo">
+            <a href="#"><span>SPA CRUD</span> Courses App</a>
+          </div>
+          <ul class="navbar-links">
+            <li><a class="btn-courses" href="#">All Courses</a></li>
+            <li><a class="btn-add" href="#">Add Course</a></li>
+            <li><a class="btn-edit-delete" href="#">Edit/delete</a></li>
+            <li><a class="btn-links" href="#">Useful links</a></li>
+          </ul>
         </div>
-        <ul class="navbar-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Add Course</a></li>
-          <li><a href="#">Edit/delete</a></li>
-          <li><a href="#">Useful links</a></li>
-        </ul>
+        <div class="navbar-search">
+          <input type="text" placeholder="Search ..." />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="courses-view">
+        <h2>All Courses</h2>
+        <div class="container"></div>
       </div>
-      <div class="navbar-search">
-        <input type="text" placeholder="Search ..." />
-        <button>Search</button>
+      <div id="add-view">
+        <h2>Add Course</h2>
+
       </div>
-    </nav>
+      <div id="edit-delete-view">
+        <h2>Edit / Delete</h2>
+        
+      </div>
+      <div id="links-view">
+        <h2>Useful links</h2>
+        
+      </div>
+    </main>
+    <footer></footer>
     <script src="db.js"></script>
     <script src="main.js"></script>
   </body>
