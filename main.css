@@ -113,7 +113,7 @@ h2 {
   text-align: center;
   font-size: 2rem;
   padding: 1rem 0;
-  text-shadow:  var(--font-shadow);
+  text-shadow: var(--font-shadow);
 }
 
 .card {
@@ -152,6 +152,7 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: 0.8rem;
 }
 
 .level,
@@ -182,14 +183,61 @@ h2 {
   display: none;
 }
 
-#add-view{
+/* add-view */
+
+#add-view {
   display: none;
 }
+
+#add-view form {
+  width: 50%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-view input,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-bottom-left-radius: var(--border-radius);
+  border-left: 2px solid var(--primary-green-light);
+  border-bottom: 2px solid var(--primary-green-light);
+  color: var(--text-gray);
+}
+#add-view select {
+  color: var(--text-gray);
+}
+
+.btn-save {
+  all: unset;
+  width: 50%;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  background-color: var(--primary-green);
+  text-align: center;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  color: var(--white);
+}
+
+.btn-save:hover {
+  background-color: var(--primary-green-hover);
+  cursor: pointer;
+}
+
+/* edit-delete-view */
 
 #edit-delete-view {
   display: none;
 }
 
-#links-view{
+/* links-view */
+
+#links-view {
   display: none;
 }

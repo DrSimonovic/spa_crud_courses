@@ -1,50 +1,55 @@
-let dbCourses = [
-  {
-    title: "Java Script",
-    level: "Beginner",
-    durationHours: 100,
-    instructor: "Nikola Jokic",
-    price: 150,
-    icon: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/javascript/javascript-original.svg",
-  },
-  {
-    title: "Java Script",
-    level: "Intermediate",
-    durationHours: 150,
-    instructor: "Bogdan Bogdanovic",
-    price: 300,
-    icon: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/javascript/javascript-original.svg",
-  },
-  {
-    title: "Java Script",
-    level: "Advanced",
-    durationHours: 100,
-    instructor: "Petar Petrovic",
-    price: 500,
-    icon: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/javascript/javascript-original.svg",
-  },
-  {
-    title: "ReactJS",
-    level: "Beginner",
-    durationHours: 80,
-    instructor: "Branimir Stulic",
-    price: 200,
-    icon: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/react/react-original.svg",
-  },
-  {
-    title: "PHP",
-    level: "Beginner",
-    durationHours: 110,
-    instructor: "Kawhi Leonard",
-    price: 200,
-    icon: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/php/php-original.svg",
-  },
-  {
-    title: "Laravel",
-    level: "Beginner",
-    durationHours: 300,
-    instructor: "Jimmy Butler",
-    price: 500,
-    icon: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/laravel/laravel-original.svg",
-  },
-];
+let dbCourses = [];
+if (localStorage.db && JSON.parse(localStorage.db).length > 0) {
+  dbCourses = JSON.parse(localStorage.db);
+} else {
+  dbCourses = [
+    {
+      title: "Java Script",
+      level: "Beginner",
+      duration: 100,
+      instructor: "Nikola Jokic",
+      price: 150,
+      icon: "https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/javascript/javascript-original.svg",
+    },
+    {
+      title: "Java Script",
+      level: "Intermediate",
+      duration: 150,
+      instructor: "Bogdan Bogdanovic",
+      price: 300,
+      icon: "pictures\javascript-original.svg",
+    },
+    {
+      title: "Java Script",
+      level: "Advanced",
+      duration: 100,
+      instructor: "Petar Petrovic",
+      price: 500,
+      icon: "pictures\javascript-original.svg",
+    },
+    {
+      title: "ReactJS",
+      level: "Beginner",
+      duration: 80,
+      instructor: "Branimir Stulic",
+      price: 200,
+      icon: "pictures\react-original.svg",
+    },
+    {
+      title: "PHP",
+      level: "Beginner",
+      duration: 110,
+      instructor: "Kawhi Leonard",
+      price: 200,
+      icon: "pictures\php-original.svg",
+    },
+    {
+      title: "Laravel",
+      level: "Beginner",
+      duration: 300,
+      instructor: "Jimmy Butler",
+      price: 500,
+      icon: "pictures\react-original.svg",
+    },
+  ];
+}
