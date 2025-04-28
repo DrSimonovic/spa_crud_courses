@@ -27,21 +27,36 @@
       </nav>
     </header>
     <main>
+      <!-- ALL COURSES VIEW -->
       <div id="courses-view">
         <h2>All Courses</h2>
         <div class="container"></div>
       </div>
+      <!-- ADD VIEW -->
       <div id="add-view">
         <h2>Add Course</h2>
-
+        <form action="">
+          <input type="text" placeholder="title" />
+          <select name="level" id="">
+            <option value="" disabled selected>level</option>
+            <option value="Beginner">Begginer</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+          <input type="number" placeholder="duration (hours)" />
+          <input type="text" placeholder="instruction name" />
+          <input type="number" placeholder="price (eur)" />
+          <input type="text" placeholder="icon (url)" />
+          <button class="btn-save">Save</button>
+        </form>
       </div>
+      <!-- EDIT / DELETE VIEW -->
       <div id="edit-delete-view">
         <h2>Edit / Delete</h2>
-        
       </div>
+      <!-- LINKS VIEW -->
       <div id="links-view">
         <h2>Useful links</h2>
-        
       </div>
     </main>
     <footer></footer>
