@@ -68,7 +68,6 @@ function displayCoursesView(e) {
   editDeleteView.style.display = "none";
   editView.style.display = "none";
   linksView.style.display = "none";
-  createCourses();
   coursesView.style.display = "block";
 }
 
@@ -182,22 +181,28 @@ function liveSearch(e) {
     e.preventDefault();
   }
   let searchTerm = this.value;
-  let filtered = dbCourses.filter((course) => {
-    course.title.incl
-  });
+  console.log(searchTerm);
+  let filtered = dbCourses.filter(
+    (course) =>
+      course.title.includes(searchTerm) ||
+      course.level.includes(searchTerm) ||
+      course.instructor.includes(searchTerm)
+  );
+  createCourses(filtered);
+  displayCoursesView();
 }
 
 // end event listeners
 
 // *************************
 
-displayCoursesView();
+createCourses();
 
 // *************************
 
-function createCourses() {
+function createCourses(courses = dbCourses) {
   let html = "";
-  dbCourses.forEach((course) => {
+  courses.forEach((course) => {
     html += `<div class="card">
             <div class="row">
               <div class="level">${course.level}</div>
@@ -213,7 +218,7 @@ function createCourses() {
           </div>`.trim();
   });
   coursesContainer.innerHTML = html;
-  // displayCoursesView();
+  displayCoursesView();
 }
 
 function createEditDeleteCards() {
