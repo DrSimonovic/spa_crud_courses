@@ -22,7 +22,7 @@
           </ul>
         </div>
         <div class="navbar-search">
-          <input type="text" placeholder="Search ..." />
+          <input id="search-input" type="text" placeholder="Search ..." />
         </div>
       </nav>
     </header>
@@ -75,25 +75,47 @@
       <!-- EDIT / DELETE VIEW -->
       <div id="edit-delete-view">
         <h2>Edit / Delete</h2>
-        <div class="container">
-          <div class="card">
-            <div class="row">
-              <div class="level">Begginer</div>
-              <div class="duration">150 hours</div>
-            </div>
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/javascript/javascript-original.svg"
-              alt=""
-            />
-            <div class="title">Java Script</div>
-            <div class="instructor">Nikola Jokic</div>
-            <div class="price">199 EUR</div>
-            <div class="row-btns">
-              <button class="btn btn-edit">Edit</button>
-              <button class="btn btn-delete">Delete</button>
-            </div>
-          </div>
-        </div>
+        <div class="container"></div>
+      </div>
+      <!-- EDIT VIEW -->
+      <div id="edit-view">
+        <h2>Edit Course</h2>
+        <form action="">
+          <input
+            type="text"
+            id="title-edit"
+            placeholder="Enter the course name"
+            required
+          />
+          <select id="level-edit" required>
+            <option value="" disabled selected>Select a course level</option>
+            <option value="Beginner">Begginer</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+          <input
+            type="number"
+            id="duration-edit"
+            placeholder="Enter a course duration (hours)"
+          />
+          <input
+            type="text"
+            id="instructor-edit"
+            placeholder="Enter instructor name"
+            required
+          />
+          <input
+            type="number"
+            id="price-edit"
+            placeholder="Enter the price (eur)"
+          />
+          <input
+            type="text"
+            id="icon-edit"
+            placeholder="Enter the url of the icon file (svg)"
+          />
+          <button class="btn btn-update">Update</button>
+        </form>
       </div>
       <!-- LINKS VIEW -->
       <div id="links-view">

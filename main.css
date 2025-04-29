@@ -11,12 +11,12 @@
   --dark-gray: #333333;
   --text-gray: #666666;
   --accent-red: #f44336;
-  --accent-red-hover: #d32f2f; 
+  --accent-red-hover: #d32f2f;
   --accent-red-dark: #d32f2f;
   --accent-blue: #2196f3;
-  --accent-blue-hover: #1976d2; 
+  --accent-blue-hover: #1976d2;
   --accent-yellow: #ffc107;
-  --border: 1px solid var(--primary-green-light);
+  --border: 3px solid var(--primary-green-light);
   --border-radius: 4px;
   --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   --font-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -150,7 +150,8 @@ h2 {
   height: 12.5rem;
 }
 
-.row, .row-btns {
+.row,
+.row-btns {
   width: 100%;
   padding: 0.5rem 0.5rem;
 
@@ -195,7 +196,7 @@ h2 {
   display: none;
 }
 
-#add-view form {
+form {
   width: 50%;
   margin: 1rem auto;
   display: flex;
@@ -204,7 +205,7 @@ h2 {
   align-items: center;
 }
 
-#add-view input,
+input,
 select {
   width: 100%;
   padding: 0.5rem;
@@ -215,11 +216,12 @@ select {
   border-bottom: 2px solid var(--primary-green-light);
   color: var(--text-gray);
 }
-#add-view select {
+
+select {
   color: var(--text-gray);
 }
 
-.btn{
+.btn {
   all: unset;
   margin: 0.5rem auto;
   padding: 0.5rem;
@@ -227,7 +229,7 @@ select {
   font-weight: 600;
   border-radius: var(--border-radius);
   color: var(--white);
-
+  cursor: pointer;
 }
 
 .btn-save {
@@ -237,43 +239,39 @@ select {
 
 .btn-save:hover {
   background-color: var(--primary-green-hover);
-  cursor: pointer;
 }
 
 /* edit-delete-view */
 
-/* #edit-delete-view .row-btns{
-  margin: 0rem 0.5rem;
-  padding: 0.5rem;
-} */
-
-.btn-edit, .btn-delete {
-  width: 25%;
-  cursor: pointer;
+#edit-delete-view {
+  display: none;
 }
 
-.btn-edit{
+.btn-edit,
+.btn-delete {
+  width: 25%;
+}
+
+.btn-edit,
+.btn-update {
   background-color: var(--accent-blue);
 }
 
-.btn-edit:hover{
-background-color: var(--accent-blue-hover);
+.btn-edit:hover,
+.btn-update:hover {
+  background-color: var(--accent-blue-hover);
 }
 
-.btn-delete{
+.btn-delete {
   background-color: var(--accent-red);
 }
 
-.btn-delete:hover{
-background-color: var(--accent-red-hover);
+.btn-delete:hover {
+  background-color: var(--accent-red-hover);
 }
 
-/* .row-btns{
-  background-color: yellow;
-} */
-
-#edit-delete-view {
-  display: none;
+.btn-update {
+  width: 50%;
 }
 
 /* links-view */

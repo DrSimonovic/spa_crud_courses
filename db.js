@@ -14,7 +14,7 @@ if (localStorage.db && JSON.parse(localStorage.db).length > 0) {
       icon: "https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/javascript/javascript-original.svg",
     },
     {
-      id:2,
+      id: 2,
       title: "CSS 3",
       level: "Intermediate",
       duration: 150,
@@ -23,7 +23,7 @@ if (localStorage.db && JSON.parse(localStorage.db).length > 0) {
       icon: "https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/css3/css3-original.svg",
     },
     {
-      id:3,
+      id: 3,
       title: "Java Script",
       level: "Advanced",
       duration: 100,
@@ -32,7 +32,7 @@ if (localStorage.db && JSON.parse(localStorage.db).length > 0) {
       icon: "pictures/javascript-original.svg",
     },
     {
-      id:4,
+      id: 4,
       title: "ReactJS",
       level: "Beginner",
       duration: 80,
@@ -41,7 +41,7 @@ if (localStorage.db && JSON.parse(localStorage.db).length > 0) {
       icon: "pictures/react-original.svg",
     },
     {
-      id:5,
+      id: 5,
       title: "PHP",
       level: "Beginner",
       duration: 110,
@@ -50,7 +50,7 @@ if (localStorage.db && JSON.parse(localStorage.db).length > 0) {
       icon: "pictures/php-original.svg",
     },
     {
-      id:6,
+      id: 6,
       title: "Laravel",
       level: "Beginner",
       duration: 300,

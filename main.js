@@ -1,9 +1,19 @@
+let id = null; // globalna varijabla koja predstavlja index aktuelnog kursa za edit,
+// a postavlja se u showCourse, sa vrijednošću definisanom u createEditDeleteCards
+// prenosenjem preko data-id odgovarajuceg button-a pomocu this u event handleru
+
 // views
 
 let coursesView = document.querySelector("#courses-view");
 let addView = document.querySelector("#add-view");
 let editDeleteView = document.querySelector("#edit-delete-view");
+let editView = document.querySelector("#edit-view");
 let linksView = document.querySelector("#links-view");
+
+// containers
+
+let coursesContainer = coursesView.querySelector(".container");
+let editDeleteContainer = editDeleteView.querySelector(".container");
 
 // btns
 
@@ -12,6 +22,7 @@ let btnAdd = document.querySelector(".btn-add");
 let btnEditDelete = document.querySelector(".btn-edit-delete");
 let btnLinks = document.querySelector(".btn-links");
 let btnSaveInput = document.querySelector(".btn-save");
+let btnUpdate = document.querySelector(".btn-update");
 
 // inputs
 
@@ -22,8 +33,14 @@ let instructorInput = document.querySelector("#instructor-input-add");
 let priceInput = document.querySelector("#price-input-add");
 let iconInput = document.querySelector("#icon-input-add");
 
-let coursesContainer = coursesView.querySelector(".container");
-let editDeleteContainer = editDeleteView.querySelector(".container");
+let titleEdit = document.querySelector("#title-edit");
+let levelEdit = document.querySelector("#level-edit");
+let durationEdit = document.querySelector("#duration-edit");
+let instructorEdit = document.querySelector("#instructor-edit");
+let priceEdit = document.querySelector("#price-edit");
+let iconEdit = document.querySelector("#icon-edit");
+
+let searchInput = document.querySelector("#search-input");
 
 // listeners
 
@@ -31,7 +48,11 @@ btnCourses.addEventListener("click", displayCoursesView);
 btnAdd.addEventListener("click", displayAddView);
 btnEditDelete.addEventListener("click", displayEditDeleteView);
 btnLinks.addEventListener("click", displayLinksView);
+
 btnSaveInput.addEventListener("click", createNewCourse);
+btnUpdate.addEventListener("click", updateCourse);
+
+searchInput.addEventListener("input", liveSearch);
 
 window.addEventListener("beforeunload", (e) => {
   localStorage.db = JSON.stringify(dbCourses);
@@ -45,6 +66,7 @@ function displayCoursesView(e) {
   }
   addView.style.display = "none";
   editDeleteView.style.display = "none";
+  editView.style.display = "none";
   linksView.style.display = "none";
   createCourses();
   coursesView.style.display = "block";
@@ -56,6 +78,7 @@ function displayAddView(e) {
   }
   coursesView.style.display = "none";
   editDeleteView.style.display = "none";
+  editView.style.display = "none";
   linksView.style.display = "none";
   addView.style.display = "block";
 }
@@ -66,9 +89,21 @@ function displayEditDeleteView(e) {
   }
   coursesView.style.display = "none";
   addView.style.display = "none";
+  editView.style.display = "none";
   linksView.style.display = "none";
   createEditDeleteCards();
   editDeleteView.style.display = "block";
+}
+
+function displayEditView(e) {
+  if (e) {
+    e.preventDefault();
+  }
+  coursesView.style.display = "none";
+  addView.style.display = "none";
+  editDeleteView.style.display = "none";
+  linksView.style.display = "none";
+  editView.style.display = "block";
 }
 
 function displayLinksView(e) {
@@ -78,6 +113,7 @@ function displayLinksView(e) {
   coursesView.style.display = "none";
   addView.style.display = "none";
   editDeleteView.style.display = "none";
+  editView.style.display = "none";
   linksView.style.display = "block";
 }
 
@@ -92,11 +128,12 @@ function createNewCourse(e) {
     duration: durationInput.value,
     instructor: instructorInput.value,
     price: priceInput.value,
-    icon: iconInput.value + `?${Math.random()}`, // sprjecava kesiranje
+    icon: iconInput.value + `?${Math.random()}`, // sprecava kesiranje
   };
   dbCourses[dbCourses.length] = newCourse;
   resetInputs();
   createCourses();
+  displayCoursesView();
 }
 
 function deleteCourse(e) {
@@ -108,9 +145,55 @@ function deleteCourse(e) {
   displayCoursesView();
 }
 
+function showCourse(e) {
+  if (e) {
+    e.preventDefault();
+  }
+  id = this.dataset.id; // globalna varijabla za pristup kursu kojeg zelimo da editujemo
+  let course = dbCourses[id];
+  titleEdit.value = course.title;
+  levelEdit.value = course.level;
+  durationEdit.value = course.duration;
+  instructorEdit.value = course.instructor;
+  priceEdit.value = course.price;
+  iconEdit.value = course.icon;
+  displayEditView();
+}
+
+function updateCourse(e) {
+  if (e) {
+    e.preventDefault();
+  }
+  let updatedCourse = {
+    id: dbCourses[id].id,
+    title: titleEdit.value,
+    level: levelEdit.value,
+    duration: durationEdit.value,
+    instructor: instructorEdit.value,
+    price: priceEdit.value,
+    icon: iconEdit.value,
+  };
+  dbCourses[id] = updatedCourse;
+  displayCoursesView();
+}
+
+function liveSearch(e) {
+  if (e) {
+    e.preventDefault();
+  }
+  let searchTerm = this.value;
+  let filtered = dbCourses.filter((course) => {
+    course.title.incl
+  });
+}
+
 // end event listeners
 
+// *************************
+
 displayCoursesView();
+
+// *************************
 
 function createCourses() {
   let html = "";
@@ -162,11 +245,6 @@ function createEditDeleteCards() {
     btnDelete.addEventListener("click", deleteCourse);
     btnEditAll[index].addEventListener("click", showCourse);
   });
-}
-
-function showCourse(){
-  console.log(dbCourses[this.dataset.id].id)
-  // alert(`Radi dugme edit na kursu  ${dbCourses[this.dataset.id].name} `);
 }
 
 function resetInputs() {
