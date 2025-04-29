@@ -36,23 +36,64 @@
       <div id="add-view">
         <h2>Add Course</h2>
         <form action="">
-          <input type="text" name="title" placeholder="Enter the course name" required />
-          <select name="level" id="" required>
+          <input
+            type="text"
+            id="title-input-add"
+            placeholder="Enter the course name"
+            required
+          />
+          <select id="level-input-add" required>
             <option value="" disabled selected>Select a course level</option>
             <option value="Beginner">Begginer</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
           </select>
-          <input type="number" name="duration" placeholder="Enter a course duration (hours)" />
-          <input type="text" name="instructor" placeholder="Enter instructor name"  required/>
-          <input type="number" name="price" placeholder="Enter the price (eur)" />
-          <input type="text" name="icon" placeholder="Enter the url of the icon file" />
-          <button class="btn-save">Save</button>
+          <input
+            type="number"
+            id="duration-input-add"
+            placeholder="Enter a course duration (hours)"
+          />
+          <input
+            type="text"
+            id="instructor-input-add"
+            placeholder="Enter instructor name"
+            required
+          />
+          <input
+            type="number"
+            id="price-input-add"
+            placeholder="Enter the price (eur)"
+          />
+          <input
+            type="text"
+            id="icon-input-add"
+            placeholder="Enter the url of the icon file (svg)"
+          />
+          <button class="btn btn-save">Save</button>
         </form>
       </div>
       <!-- EDIT / DELETE VIEW -->
       <div id="edit-delete-view">
         <h2>Edit / Delete</h2>
+        <div class="container">
+          <div class="card">
+            <div class="row">
+              <div class="level">Begginer</div>
+              <div class="duration">150 hours</div>
+            </div>
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/javascript/javascript-original.svg"
+              alt=""
+            />
+            <div class="title">Java Script</div>
+            <div class="instructor">Nikola Jokic</div>
+            <div class="price">199 EUR</div>
+            <div class="row-btns">
+              <button class="btn btn-edit">Edit</button>
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- LINKS VIEW -->
       <div id="links-view">
