@@ -12,13 +12,15 @@
       <nav class="navbar">
         <div class="container-logo-links">
           <div class="navbar-logo">
-            <a href="#"><span>SPA CRUD</span> Courses App</a>
+            <a href="#"><span>SPA CRUD</span> Courses</a>
+          </div>
+          <div class="phone-navbar-logo">
+            <a href="#"><span>SPA CRUD</span> Courses</a>
           </div>
           <ul class="navbar-links">
             <li><a class="btn-courses" href="#">All Courses</a></li>
             <li><a class="btn-add" href="#">Add Course</a></li>
-            <li><a class="btn-edit-delete" href="#">Edit/delete</a></li>
-            <li><a class="btn-links" href="#">Useful links</a></li>
+            <li><a class="btn-edit-delete" href="#">Edit/Delete</a></li>
           </ul>
         </div>
         <div class="navbar-search">
@@ -27,6 +29,13 @@
       </nav>
     </header>
     <main>
+      <aside id="side-menu">
+        <ul>
+          <li><a class="btn-courses" href="#">All Courses</a></li>
+          <li><a class="btn-add" href="#">Add Course</a></li>
+          <li><a class="btn-edit-delete" href="#">Edit/Delete</a></li>
+        </ul>
+     </aside>
       <!-- ALL COURSES VIEW -->
       <div id="courses-view">
         <h2>All Courses</h2>
@@ -116,10 +125,6 @@
           />
           <button class="btn btn-update">Update</button>
         </form>
-      </div>
-      <!-- LINKS VIEW -->
-      <div id="links-view">
-        <h2>Useful links</h2>
       </div>
     </main>
     <footer></footer>

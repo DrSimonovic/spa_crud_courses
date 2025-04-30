@@ -52,16 +52,21 @@ body {
   gap: 1rem;
 }
 
-.navbar-logo a {
+a {
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-.navbar-logo span {
+.navbar-logo,
+.phone-navbar-logo span {
   color: var(--light-gray);
   text-shadow: var(--font-shadow);
+}
+
+.phone-navbar-logo {
+  display: none;
 }
 
 .navbar-search {
@@ -97,6 +102,33 @@ body {
 
 .navbar-links a:hover {
   color: var(--primary-green-dark);
+}
+
+main {
+  position: relative;
+}
+
+aside {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: var(--light-bg);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+aside ul {
+  height: 50%;
+  text-align: center;
+}
+
+aside li {
+  list-style: none;
+  padding: 20px 0;
 }
 
 .container {
@@ -278,4 +310,31 @@ select {
 
 #links-view {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .navbar-links {
+    display: none;
+  }
+  .navbar-logo {
+    display: none;
+  }
+
+  .phone-navbar-logo {
+    display: inline;
+  }
+
+  aside a {
+    color: var(--primary-green);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 80%;
+  }
 }

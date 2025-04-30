@@ -8,21 +8,26 @@ let coursesView = document.querySelector("#courses-view");
 let addView = document.querySelector("#add-view");
 let editDeleteView = document.querySelector("#edit-delete-view");
 let editView = document.querySelector("#edit-view");
-let linksView = document.querySelector("#links-view");
 
 // containers
 
 let coursesContainer = coursesView.querySelector(".container");
 let editDeleteContainer = editDeleteView.querySelector(".container");
+let sideMenu = document.querySelector("#side-menu");
 
 // btns
 
 let btnCourses = document.querySelector(".btn-courses");
 let btnAdd = document.querySelector(".btn-add");
 let btnEditDelete = document.querySelector(".btn-edit-delete");
-let btnLinks = document.querySelector(".btn-links");
 let btnSaveInput = document.querySelector(".btn-save");
 let btnUpdate = document.querySelector(".btn-update");
+
+let btnLogoPhone = document.querySelector(".phone-navbar-logo");
+let btnCoursesPhone = document.querySelector("#side-menu .btn-courses");
+let btnAddPhone = document.querySelector("#side-menu .btn-add");
+let btnEditDeletePhone = document.querySelector("#side-menu .btn-edit-delete");
+
 
 // inputs
 
@@ -45,9 +50,14 @@ let searchInput = document.querySelector("#search-input");
 // listeners
 
 btnCourses.addEventListener("click", displayCoursesView);
+btnCoursesPhone.addEventListener("click", displayCoursesView);
+
 btnAdd.addEventListener("click", displayAddView);
+btnAddPhone.addEventListener("click", displayAddView);
+
+
 btnEditDelete.addEventListener("click", displayEditDeleteView);
-btnLinks.addEventListener("click", displayLinksView);
+btnEditDeletePhone.addEventListener("click", displayEditDeleteView);
 
 btnSaveInput.addEventListener("click", createNewCourse);
 btnUpdate.addEventListener("click", updateCourse);
@@ -58,16 +68,26 @@ window.addEventListener("beforeunload", (e) => {
   localStorage.db = JSON.stringify(dbCourses);
 });
 
+btnLogoPhone.addEventListener("click", showSideMenu);
+
 // event handlers
+
+function showSideMenu(e) {
+  if (e) {
+    e.preventDefault();
+  }
+  sideMenu.style.display = "block";
+}
 
 function displayCoursesView(e) {
   if (e) {
     e.preventDefault();
   }
+  sideMenu.style.display = "none";
+
   addView.style.display = "none";
   editDeleteView.style.display = "none";
   editView.style.display = "none";
-  linksView.style.display = "none";
   coursesView.style.display = "block";
 }
 
@@ -75,10 +95,11 @@ function displayAddView(e) {
   if (e) {
     e.preventDefault();
   }
+  sideMenu.style.display = "none";
+
   coursesView.style.display = "none";
   editDeleteView.style.display = "none";
   editView.style.display = "none";
-  linksView.style.display = "none";
   addView.style.display = "block";
 }
 
@@ -86,10 +107,11 @@ function displayEditDeleteView(e) {
   if (e) {
     e.preventDefault();
   }
+  sideMenu.style.display = "none";
+
   coursesView.style.display = "none";
   addView.style.display = "none";
   editView.style.display = "none";
-  linksView.style.display = "none";
   createEditDeleteCards();
   editDeleteView.style.display = "block";
 }
@@ -101,19 +123,7 @@ function displayEditView(e) {
   coursesView.style.display = "none";
   addView.style.display = "none";
   editDeleteView.style.display = "none";
-  linksView.style.display = "none";
   editView.style.display = "block";
-}
-
-function displayLinksView(e) {
-  if (e) {
-    e.preventDefault();
-  }
-  coursesView.style.display = "none";
-  addView.style.display = "none";
-  editDeleteView.style.display = "none";
-  editView.style.display = "none";
-  linksView.style.display = "block";
 }
 
 function createNewCourse(e) {

@@ -1,5 +1,4 @@
 let dbCourses = [];
-// localStorage.db = "";
 if (localStorage.db && JSON.parse(localStorage.db).length > 0) {
   dbCourses = JSON.parse(localStorage.db);
 } else {
