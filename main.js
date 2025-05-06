@@ -76,7 +76,7 @@ function showSideMenu(e) {
   if (e) {
     e.preventDefault();
   }
-  sideMenu.style.display = "block";
+  (sideMenu.style.display === "none")?sideMenu.style.display = "block":sideMenu.style.display = "none";
 }
 
 function displayCoursesView(e) {

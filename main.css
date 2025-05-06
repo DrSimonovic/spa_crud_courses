@@ -1,26 +1,50 @@
 /* GLOBALNE CSS VARIJABLE */
 :root {
+  /* Primarna zelena paleta */
   --primary-green: #4caf50;
   --primary-green-dark: #388e3c;
   --primary-green-light: #8bc34a;
   --primary-green-hover: #45a049;
+
+  /* Neutralne boje */
   --light-bg: #f5f5f5;
   --white: #ffffff;
   --light-gray: #e0e0e0;
   --medium-gray: #9e9e9e;
   --dark-gray: #333333;
   --text-gray: #666666;
+
+  /* Akcent boje */
   --accent-red: #f44336;
   --accent-red-hover: #d32f2f;
   --accent-red-dark: #d32f2f;
   --accent-blue: #2196f3;
   --accent-blue-hover: #1976d2;
   --accent-yellow: #ffc107;
+
+  /* Stilovi */
   --border: 3px solid var(--primary-green-light);
   --border-radius: 4px;
   --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   --font-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  --font-main: Tahoma, Verdana, sans-serif;
+
+  /* Fontovi */
+  --font-main: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --line-height: 1.6;
+
+  /* Dimenzije */
+  --max-width: 1200px;
+  --header-height: 60px;
+
+  /* Tranzicije */
+  --transition-speed: 0.3s;
+
+  /* Responzivni breakpointi */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
 }
 
 * {
@@ -55,8 +79,8 @@ body {
 a {
   color: var(--white);
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .navbar-logo,
@@ -96,8 +120,6 @@ a {
 
 .navbar-links a {
   color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
 }
 
 .navbar-links a:hover {
@@ -145,14 +167,14 @@ h2 {
   color: white;
   background-color: var(--primary-green-light);
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem 0;
   text-shadow: var(--font-shadow);
 }
 
 .card {
   width: 23%;
-  height: 24rem;
+  height: 25rem;
   padding: 0.5rem;
   margin: 0.5rem 0.5rem;
   border: var(--border);
@@ -166,7 +188,7 @@ h2 {
 }
 
 #edit-delete-view .card {
-  height: 27rem;
+  height: 28rem;
 }
 
 .card:hover {
@@ -215,7 +237,7 @@ h2 {
 }
 .price {
   color: var(--primary-green);
-  font-size: 1.5;
+  font-size: 1.5rem;
 }
 
 #courses-view {
